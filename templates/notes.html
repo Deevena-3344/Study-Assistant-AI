@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>StudyAI - Notes Generator</title>
+
+	<link rel="stylesheet"
+		  href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+	<aside class="sidebar">
+		<h2>🎓 StudyAI</h2>
+
+		<nav>
+			<a href="/">🏠 Dashboard</a>
+			<a href="/#chatbox">💬 AI Chat</a>
+			<a href="/notes" class="active">📝 Study Notes</a>
+			<a href="/#quiz">📚 Quiz Generator</a>
+		</nav>
+
+		<p class="sidebar-footer">
+			Your personal AI learning partner
+		</p>
+	</aside>
+
+	<main class="main-content">
+
+		<header>
+			<p class="eyebrow">SMART LEARNING TOOL</p>
+
+			<h1>AI Notes Generator 📝</h1>
+
+			<p>
+				Turn lengthy study material into simple,
+				organized revision notes.
+			</p>
+		</header>
+
+		<section class="notes-container">
+
+			<h2>Enter Your Study Material</h2>
+
+			<p>
+				Paste your textbook content, lecture notes
+				or any study material below.
+			</p>
+
+			<textarea
+				id="study-text"
+				placeholder="Paste your study material here..."
+				rows="10">
+			</textarea>
+
+			<div class="notes-buttons">
+
+				<button id="generate-notes" class="primary-btn">
+					✨ Generate Notes
+				</button>
+
+				<button id="clear-notes" class="clear-btn">
+					Clear
+				</button>
+
+			</div>
+
+			<p class="demo-notice">
+				Demo version: This tool uses basic text processing,
+				not a real AI model.
+			</p>
+
+		</section>
+
+		<section id="notes-result" class="notes-result">
+
+			<h2>Generated Study Notes</h2>
+
+			<div class="result-card">
+				<h3>📖 Short Summary</h3>
+				<div id="summary">
+					Your summary will appear here.
+				</div>
+			</div>
+
+			<div class="result-card">
+				<h3>⭐ Important Points</h3>
+				<ul id="key-points">
+					<li>Your important points will appear here.</li>
+				</ul>
+			</div>
+
+			<div class="result-card">
+				<h3>📚 Revision Notes</h3>
+				<div id="revision">
+					Your revision notes will appear here.
+				</div>
+			</div>
+
+			<button id="copy-notes" class="primary-btn">
+				📋 Copy Generated Notes
+			</button>
+
+		</section>
+
+		<footer>
+			© 2026 StudyAI | Built as a College Project
+		</footer>
+
+	</main>
+
+	<script src="{{ url_for('static', filename='notes.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,604 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background: #f4f6fb;
+	color: #20243a;
+}
+
+.sidebar {
+	width: 240px;
+	height: 100vh;
+	position: fixed;
+	background: #171b35;
+	color: white;
+	padding: 30px 20px;
+}
+
+.sidebar h2 {
+	margin-bottom: 40px;
+}
+
+.sidebar nav a {
+	display: block;
+	color: #c8cce0;
+	text-decoration: none;
+	padding: 15px;
+	border-radius: 8px;
+	margin-bottom: 10px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+	background: #343b68;
+	color: white;
+}
+
+.sidebar-footer {
+	position: absolute;
+	bottom: 25px;
+	font-size: 12px;
+	color: #aeb4d0;
+}
+
+.main-content {
+	margin-left: 240px;
+	padding: 40px;
+}
+
+header p {
+	color: #747990;
+	margin-top: 10px;
+}
+
+.eyebrow {
+	font-size: 12px;
+	letter-spacing: 2px;
+	color: #6366f1;
+	margin-bottom: 12px;
+}
+
+.hero {
+	margin-top: 35px;
+	padding: 45px;
+	background: linear-gradient(120deg, #5558df, #8585f5);
+	border-radius: 18px;
+	color: white;
+}
+
+.hero p {
+	margin: 15px 0 25px;
+}
+
+.primary-btn {
+	display: inline-block;
+	background: white;
+	color: #5558df;
+	text-decoration: none;
+	padding: 13px 20px;
+	border-radius: 8px;
+	font-weight: bold;
+}
+
+.tools {
+	margin-top: 40px;
+}
+
+.tools h2,
+.chat-section h2 {
+	margin-bottom: 22px;
+}
+
+.card-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.tool-card {
+	background: white;
+	padding: 25px;
+	border-radius: 14px;
+	box-shadow: 0 4px 15px #20243a0c;
+}
+
+.tool-card span {
+	font-size: 30px;
+}
+
+.tool-card h3 {
+	margin: 18px 0 10px;
+}
+
+.tool-card p {
+	color: #747990;
+	line-height: 1.5;
+	margin-bottom: 18px;
+}
+
+.tool-card a {
+	color: #5558df;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.chat-section {
+	background: white;
+	padding: 25px;
+	margin-top: 40px;
+	border-radius: 14px;
+}
+
+.messages {
+	margin: 20px 0;
+	min-height: 100px;
+	background: #f4f6fb;
+	padding: 18px;
+	border-radius: 10px;
+}
+
+.bot-message,
+.user-message {
+	padding: 12px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	line-height: 1.5;
+}
+
+.bot-message {
+	background: #e7e9ff;
+}
+
+.user-message {
+	background: #dff7e9;
+	text-align: right;
+}
+
+#chat-form {
+	display: flex;
+	gap: 10px;
+}
+
+#user-input {
+	flex: 1;
+	padding: 14px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	outline-color: #6366f1;
+}
+
+#chat-form button {
+	background: #5558df;
+	color: white;
+	border: none;
+	padding: 0 25px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.notice {
+	color: #888;
+	font-size: 12px;
+	margin-top: 12px;
+}
+
+footer {
+	text-align: center;
+	color: #888;
+	margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+	.card-container {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 600px) {
+	.sidebar {
+		width: 100%;
+		height: auto;
+		position: relative;
+	}
+
+	.sidebar nav {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.sidebar-footer {
+		display: none;
+	}
+
+	.main-content {
+		margin-left: 0;
+		padding: 20px;
+	}
+
+	.hero {
+		padding: 25px;
+	}
+}
+ /* ===== STEP 4 DASHBOARD UPGRADE ===== */
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px #20243a0c;
+    transition: transform 0.2s;
+}
+
+.stat-card:hover,
+.tool-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card span {
+    font-size: 32px;
+}
+
+.stat-card h3 {
+    font-size: 25px;
+    color: #5558df;
+}
+
+.stat-card p {
+    color: #747990;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.progress-section {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-top: 25px;
+    box-shadow: 0 4px 15px #20243a0c;
+}
+
+.progress-section h2 {
+    margin-bottom: 10px;
+}
+
+.progress-section p {
+    color: #747990;
+    margin: 12px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e9eafd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #5558df, #9292ff);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+.session-btn {
+    padding: 12px 20px;
+    background: #5558df;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.session-btn:hover {
+    background: #4144c5;
+}
+
+.tool-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tool-card:hover {
+    box-shadow: 0 8px 25px #20243a18;
+}
+
+#chat-form button:hover {
+    background: #4144c5;
+}
+
+.sidebar nav a {
+    transition: background 0.2s, color 0.2s;
+}
+
+.messages {
+    max-height: 300px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.user-message {
+    margin-left: 20%;
+}
+
+.bot-message {
+    margin-right: 20%;
+}
+
+@media (max-width: 900px) {
+    .stats-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .user-message,
+    .bot-message {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .stat-card {
+        padding: 18px;
+    }
+}
+/* ===== STEP 6: NOTES GENERATOR ===== */
+
+.notes-container {
+    background: white;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px #20243a0c;
+}
+
+.notes-container h2 {
+    margin-bottom: 12px;
+}
+
+.notes-container p {
+    color: #747990;
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+
+#study-text {
+    width: 100%;
+    min-height: 220px;
+    resize: vertical;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    outline-color: #6366f1;
+}
+
+.notes-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.notes-buttons button,
+#copy-notes {
+    cursor: pointer;
+    border: none;
+}
+
+.notes-buttons .primary-btn,
+#copy-notes {
+    background: #5558df;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.notes-buttons .primary-btn:hover,
+#copy-notes:hover {
+    background: #4144c5;
+}
+
+.clear-btn {
+    background: #eceef7;
+    color: #333;
+    padding: 13px 22px;
+    border-radius: 8px;
+}
+
+.clear-btn:hover {
+    background: #dfe2ef;
+}
+
+.demo-notice {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #a06a15 !important;
+}
+
+.notes-result {
+    margin-top: 30px;
+}
+
+.notes-result h2 {
+    margin-bottom: 20px;
+}
+
+.result-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px #20243a0c;
+}
+
+.result-card h3 {
+    margin-bottom: 15px;
+    color: #5558df;
+}
+
+.result-card p,
+.result-card li {
+    line-height: 1.8;
+    color: #555;
+}
+
+.result-card ul {
+    padding-left: 22px;
+}
+
+#copy-notes {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .notes-container {
+        padding: 20px;
+    }
+
+    .notes-buttons {
+        flex-direction: column;
+    }
+
+    .notes-buttons button {
+        width: 100%;
+    }
+}
+/* ===== STEP 7: QUIZ GENERATOR ===== */
+
+.quiz-container {
+    background: white;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px #20243a0c;
+}
+
+.quiz-container h2 {
+    margin-bottom: 20px;
+}
+
+.quiz-container label {
+    display: block;
+    margin: 18px 0 8px;
+    font-weight: bold;
+}
+
+.quiz-container input,
+.quiz-container select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline-color: #6366f1;
+}
+
+#start-quiz {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.quiz-area {
+    margin-top: 30px;
+}
+
+.question-card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px #20243a0c;
+}
+
+.question-card h3 {
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.option-label {
+    display: block;
+    padding: 13px;
+    margin: 10px 0;
+    background: #f4f6fb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.option-label:hover {
+    background: #e7e9ff;
+}
+
+.option-label input {
+    margin-right: 10px;
+}
+
+#submit-quiz {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.quiz-result {
+    background: white;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 14px;
+    line-height: 1.8;
+}
+
+.quiz-result h2 {
+    color: #5558df;
+    margin-bottom: 10px;
+}
+
+.correct-answer {
+    color: #15803d;
+    font-weight: bold;
+}
+
+.wrong-answer {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+#restart-quiz {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#restart-quiz[hidden],
+#submit-quiz[hidden] {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .quiz-container,
+    .question-card,
+    .quiz-result {
+        padding: 18px;
+    }
+}

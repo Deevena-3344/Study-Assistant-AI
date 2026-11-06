@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AI Study Assistant</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+	<aside class="sidebar">
+		<h2>🎓 StudyAI</h2>
+		<nav>
+			<a href="#" class="active">🏠 Dashboard</a>
+			<a href="#chat">💬 AI Chat</a>
+			<a href="/notes">📝 Study Notes</a>
+			<a href="#/quiz">📚 Quiz Generator</a>
+		</nav>
+		<p class="sidebar-footer">Your personal AI learning partner</p>
+	</aside>
+
+	<main class="main-content">
+		<header>
+			<div>
+				<p class="eyebrow">YOUR PERSONAL LEARNING SPACE</p>
+				<h1>Welcome to StudyAI! 👋</h1>
+				<p>Learn smarter, study better and achieve more.</p>
+			</div>
+		</header>
+
+		<section class="hero">
+			<h2>What would you like to learn today?</h2>
+			<p>Your AI study partner is ready to help.</p>
+			<a href="#chat" class="primary-btn">Start Learning →</a>
+		</section>
+        <section class="stats-container">
+
+    <div class="stat-card">
+        <span>📖</span>
+        <div>
+            <h3 id="study-count">0</h3>
+            <p>Study Sessions</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <span>📝</span>
+        <div>
+            <h3 id="notes-count">0</h3>
+            <p>Notes Created</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <span>🎯</span>
+        <div>
+            <h3 id="quiz-count">0</h3>
+            <p>Quizzes Completed</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="progress-section">
+    <h2>Your Weekly Study Goal</h2>
+    <p>Complete 5 study sessions this week.</p>
+
+    <div class="progress-bar">
+        <div id="progress-fill"></div>
+    </div>
+
+    <p id="progress-text">0 of 5 sessions completed</p>
+</section>
+<button id="complete-session" class="session-btn">
+    + Complete Study Session
+</button>
+		<section class="tools">
+			<h2>Explore Your Study Tools</h2>
+
+			<div class="card-container">
+				<div class="tool-card" id="chat">
+					<span>💬</span>
+					<h3>AI Chat Assistant</h3>
+					<p>Ask questions and understand difficult topics.</p>
+					<a href="#chatbox">Open Chat →</a>
+				</div>
+
+				<div class="tool-card" id="notes">
+					<span>📝</span>
+					<h3>Study Notes</h3>
+					<p>Turn lengthy topics into simple study notes.</p>
+					<a href="/notes">Explore Notes →</a>
+				</div>
+
+				<div class="tool-card" id="quiz">
+					<span>📚</span>
+					<h3>Quiz Generator</h3>
+					<p>Practice your knowledge with quizzes.</p>
+					<a href="/quiz">Create Quiz →</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="chat-section" id="chatbox">
+			<h2>Try Your Study Assistant</h2>
+			<p>Type a question below to test the interface.</p>
+
+			<div id="messages" class="messages">
+				<div class="bot-message">
+					Hello! 👋 I'm your StudyAI assistant.
+					What would you like to learn today?
+				</div>
+			</div>
+
+			<form id="chat-form">
+				<input
+					type="text"
+					id="user-input"
+					placeholder="Ask me anything..."
+					required
+				>
+				<button type="submit">Send</button>
+			</form>
+			<p class="notice">Demo interface: AI responses will be connected in a later step.</p>
+		</section>
+
+		<footer>
+			© 2026 StudyAI | Built as a College Project
+		</footer>
+	</main>
+
+	<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

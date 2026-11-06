@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>StudyAI - Quiz Generator</title>
+
+	<link rel="stylesheet"
+		  href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+	<aside class="sidebar">
+		<h2>🎓 StudyAI</h2>
+
+		<nav>
+			<a href="/">🏠 Dashboard</a>
+			<a href="/#chatbox">💬 AI Chat</a>
+			<a href="/notes">📝 Study Notes</a>
+			<a href="/quiz" class="active">📚 Quiz Generator</a>
+		</nav>
+
+		<p class="sidebar-footer">
+			Your personal AI learning partner
+		</p>
+	</aside>
+
+	<main class="main-content">
+
+		<header>
+			<p class="eyebrow">TEST YOUR KNOWLEDGE</p>
+			<h1>AI Quiz Generator 📚</h1>
+
+			<p>
+				Practice your knowledge and improve your learning.
+			</p>
+		</header>
+
+		<section class="quiz-container">
+
+			<h2>Create Your Quiz</h2>
+
+			<label for="topic">Choose Your Subject</label>
+
+			<input
+				type="text"
+				id="topic"
+				placeholder="Example: Python, Science, Mathematics"
+			>
+
+			<label for="question-count">
+				Number of Questions
+			</label>
+
+			<select id="question-count">
+				<option value="5">5 Questions</option>
+				<option value="10">10 Questions</option>
+				<option value="15">15 Questions</option>
+			</select>
+
+			<button id="start-quiz" class="primary-btn">
+				✨ Generate Quiz
+			</button>
+
+			<p class="demo-notice">
+				Demo version: Uses predefined sample questions.
+			</p>
+
+		</section>
+
+		<section id="quiz-area" class="quiz-area">
+
+			<div id="quiz-questions"></div>
+
+			<button id="submit-quiz" class="primary-btn" hidden>
+				Submit Quiz
+			</button>
+
+			<div id="quiz-result" class="quiz-result"></div>
+
+			<button id="restart-quiz" class="clear-btn" hidden>
+				Try Again
+			</button>
+
+		</section>
+
+		<footer>
+			© 2026 StudyAI | Built as a College Project
+		</footer>
+
+	</main>
+
+	<script src="{{ url_for('static', filename='quiz.js') }}"></script>
+
+</body>
+</html>
